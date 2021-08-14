@@ -1,0 +1,387 @@
+/*=========================================================
+		Import Fonts & All CSS Files
+=========================================================*/
+
+@import 'abstracts/variables',
+'abstracts/mixin',
+'base/reset',
+'base/typography',
+'layout/header',
+'layout/footer';
+
+/* Google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:wght@300;400;600;700&family=Yeseva+One&display=swap');
+// Banner Area Starts
+.banner-area {
+    padding: 230px 0 140px;
+    position: relative;
+    z-index: 2;
+    @include responsive(allPhone) {
+        padding: 180px 0 120px;
+    }
+    @include responsive(xxs) {
+        padding: 150px 0 100px;
+    }
+}
+
+.banner-contents {
+    text-align: center;
+    .banner-title {
+        font-size: 90px;
+        @include responsive(xl) {
+            font-size: 80px;
+        }
+        @include responsive(lg) {
+            font-size: 70px;
+        }
+        @include responsive(allPhone) {
+            font-size: 55px;
+        }
+        @include responsive(sm) {
+            font-size: 45px;
+        }
+        @include responsive(xs) {
+            font-size: 40px;
+        }
+        @include responsive(xxs) {
+            font-size: 32px;
+        }
+        @include responsive(vxxs) {
+            font-size: 32px;
+        }
+    }
+    .banner-img-shape {
+        margin-top: 50px;
+        img {}
+    }
+    .banner-button {
+        .cmn-btn {}
+    }
+}
+
+// Banner Area Ends
+// Food Area Starts
+.bg-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url(../img/section-image/section-pattern.png);
+    @include bg-prs;
+}
+
+.food-area {
+    position: relative;
+    z-index: 1;
+}
+
+.food-contents {
+    text-align: center;
+    padding: 110px 0;
+    @include responsive(allPhone) {
+        padding: 0 0 70px;
+    }
+    .food-sign {
+        img {}
+    }
+}
+
+.food-images {
+    padding: 60px 60px 30px 0;
+    @include responsive(allPhone) {
+        padding: 60px 0 0;
+    }
+    img {
+        @include responsive(allPhone) {
+            width: 100%;
+        }
+    }
+}
+
+// Food Area Ends
+// Ingredient Area Stars
+.ingredient-area {
+    .section-title {
+        @include responsive(lg) {
+            padding: 0 60px;
+        }
+    }
+}
+
+.ingredient-wrapper {
+    max-width: 560px;
+    padding: 80px 0;
+    background: rgba($bg--black, .7);
+    margin-left: auto;
+    @include responsive(allPhone) {
+        margin-left: unset;
+        margin: 0 auto;
+    }
+    .ingredient-small {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 70px;
+        li {
+            height: 110px;
+            width: 110px;
+            margin: 0 15px;
+            @include responsive(xxs) {
+                height: 70px;
+                width: 70px;
+                margin: 0 10px;
+            }
+            img {
+                @include objfit;
+            }
+        }
+    }
+}
+
+// Ingredient Area Ends
+// Appetiser-area Area Starts
+.appetiser-area {
+    position: relative;
+    z-index: 1;
+    div[class*="col"]:nth-child(2n+2) {
+        @include responsive(allPhone) {
+            margin-top: 40px;
+        }
+    }
+}
+
+.single-appetiser:nth-child(2n+2) {
+    margin-top: 60px;
+    @include responsive(allPhone) {
+        margin-top: 40px;
+    }
+}
+
+.single-appetiser {
+    .appetiser-contents {
+        margin-top: 40px;
+        &.specials-all {
+            border-right: 1px solid rgba($bg--base, .3);
+            border-bottom: 1px solid rgba($bg--base, .3);
+            margin-top: 10px;
+            .appetiser-list {
+                border-left: 1px solid rgba($bg--base, .3);
+                span {
+                    padding: 10px;
+                    display: block;
+                    margin-bottom: 0;
+                }
+            }
+            .common-para {
+                padding: 10px;
+                border-left: 1px solid rgba($bg--base, .3);
+                margin: 0;
+            }
+        }
+        .appetiser-list {
+            border-bottom: 1px solid rgba($bg--base, .3);
+            justify-content: space-between;
+            display: flex;
+            color: $text--base;
+            span {
+                margin-bottom: 7px;
+                font-size: 21px;
+                @include responsive(allPhone) {
+                    font-size: 20px;
+                }
+                @include responsive(xs) {
+                    font-size: 18px;
+                }
+            }
+        }
+        .special {
+            text-align: right;
+            display: block;
+            border-bottom: 1px solid rgba($bg--base, .3);
+            span {
+                background: rgba($bg--base, .6);
+                color: $text--white;
+                font-size: 14px;
+                padding: 5px 15px;
+                display: inline-block;
+                @include responsive(xl) {
+                    font-size: 13px;
+                }
+            }
+        }
+        .common-para {
+            margin-top: 10px;
+            @include responsive(xl) {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+// Appetiser-area Area Ends
+// Review-area Area Starts
+.review-area {}
+
+.review-wrapper {
+    background: rgba($bg--black, .7);
+    padding: 80px 30px;
+    max-width: 770px;
+    margin: 0 auto;
+    @include responsive(xs) {
+        padding: 40px 10px;
+    }
+}
+
+.single-review {
+    text-align: center;
+    .review-contents {
+        color: $text--white;
+        span {
+            display: block;
+        }
+        .review-para {
+            font-size: 25px;
+            line-height: 45px;
+            color: #dde0df;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            margin-top: 12px;
+            padding: 0 40px;
+            @include responsive(allPhone) {
+                font-size: 22px;
+                line-height: 30px;
+            }
+            @include responsive(xs) {
+                font-size: 19px;
+                padding: 0 15px;
+            }
+            @include responsive(xxs) {
+                font-size: 16px;
+            }
+            i {
+                position: absolute;
+                top: 0;
+                left: 0px;
+                opacity: .5;
+            }
+        }
+        z-index: 1;
+        .review-small {
+            margin-top: 40px;
+        }
+    }
+}
+
+.review-slider {}
+
+// Review Area Ends
+// Food Area Two Starts
+.food-area-two {
+    position: relative;
+    z-index: 1;
+}
+
+.food-left-images {
+    @include responsive(xs) {
+        text-align: center;
+    }
+    img {
+        @include responsive(lg) {
+            width: 100%;
+        }
+        @include responsive(allPhone) {
+            width: 100%;
+        }
+        @include responsive(xs) {
+            width: unset;
+        }
+    }
+}
+
+.food-wrapper-two {
+    .food-contents-two {
+        padding: 0 60px;
+        text-align: center;
+        @include responsive(lg) {
+            padding: 0 30px;
+        }
+        @include responsive(vxxs) {
+            padding: 0 7px;
+        }
+        .foods-para {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            margin-top: 16px;
+        }
+    }
+}
+
+.food-form {
+    .single-form {
+        text-align: left;
+        label {
+            font-size: 14px;
+            color: $text--base;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+        .form--control {
+            border: 1px solid #c8c6c6;
+            background: rgba($bg--white, .4);
+            height: 35px;
+            padding: 0 15px;
+            color: $text--body;
+            width: 100%;
+            outline: none;
+            box-shadow: none;
+            transition: all .3s;
+            &:focus {
+                border-color: #c89f2d;
+            }
+        }
+        .nice-select {
+            border: 1px solid #c8c6c6;
+            background: rgba($bg--white, .4);
+            height: 35px;
+            line-height: 35px;
+            padding: 0 15px;
+            outline: none;
+            box-shadow: none;
+            border-radius: 0;
+            width: 100%;
+            &.open {
+                border-color: $bg--base;
+                &::after {
+                    border-bottom: 2px solid $bg--base;
+                    border-right: 2px solid $bg--base;
+                }
+            }
+            &::after {
+                border-bottom: 2px solid $text--body;
+                border-right: 2px solid $text--body;
+                height: 8px;
+                width: 8px;
+                margin-top: -5px;
+            }
+            .list {
+                background: $bg--black;
+                color: $text--base;
+            }
+        }
+    }
+}
+
+.submit-btn {
+    background: $bg--base;
+    color: $text--white;
+    border: 1px solid $bg--base;
+    padding: 15px 60px;
+    margin-top: 30px;
+}
+
+// Food Area Two Ends

@@ -1,0 +1,250 @@
+/*=========================================================
+    [ Reset ]
+=========================================================*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Yeseva One', cursive;
+    line-height: 1;
+    color: #4c4c4c;
+    background: #fff;
+    font-size: 16px;
+    overflow-x: hidden;
+    position: relative;
+    @include responsive(allPhone) {
+        font-size: 15px;
+    }
+    @include responsive(xs) {
+        font-size: 14px;
+    }
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+input[type="number"] {
+    width: 100%;
+}
+
+button:focus {
+    outline: none;
+}
+
+button {
+    border: 0;
+    outline: 0;
+}
+
+textarea {
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/*=========================================================
+    [ Common style ]
+=========================================================*/
+
+[data-background] {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.common-title {
+    font-size: 36px;
+    color: $text--white;
+    transition: all .2s;
+    &.text-base {
+        color: $text--base;
+    }
+}
+
+.common-para {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    transition: all .3s;
+    @include responsive(lg) {
+        font-size: 14px;
+    }
+    @include responsive(allPhone) {
+        font-size: 14px;
+    }
+}
+
+.bg-footer {
+    background: $bg--footer;
+}
+
+.fof-open-sans {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.fof-lato {
+    font-family: 'Lato', sans-serif !important;
+}
+
+.fof-gen-book {
+    font-family: 'Gentium Book Basic', sans-serif !important;
+}
+
+@media screen and (min-width: 320px) and (max-width: 991px) {
+    .pt-110 {
+        padding-top: 70px !important;
+    }
+    .pb-110 {
+        padding-bottom: 70px !important;
+    }
+    .pt-80 {
+        padding-top: 40px !important;
+    }
+    .wow {
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
+    }
+}
+
+.cmn-btn {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Lato";
+    padding: 20px 50px;
+    margin-top: 30px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    position: relative;
+    border-radius: 0px;
+    z-index: 1;
+    &:hover {
+        background: $bg--base;
+        color: $text--white;
+    }
+    @include responsive(allPhone) {
+        font-size: 15px;
+        padding: 15px 40px;
+    }
+    @include responsive(vxxs) {
+        font-size: 13px;
+        padding: 15px 20px;
+    }
+}
+
+.opc-black {
+    background: rgba($bg--black, .6);
+}
+
+.opc-white {
+    background: rgba($bg--white, .27);
+}
+
+.opc-white-border {
+    border: 1px solid rgba($bg--white, .5);
+}
+
+
+/*=========================================================
+    [ margin & padding ]
+=========================================================*/
+
+.pt-110 {
+    padding-top: 110px;
+}
+
+.pb-110 {
+    padding-bottom: 110px;
+}
+
+.pt-80 {
+    padding-top: 80px;
+}
+
+
+/*=========================================================
+    [ Section ]
+=========================================================*/
+
+.section-title {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 60px;
+    @include responsive(lg) {
+        padding: 0 40px;
+    }
+    @include responsive(xxs) {
+        padding: 0 20px;
+    }
+    @include responsive(vxxs) {
+        padding: 0 0;
+    }
+}
+
+.section-title.text-left {
+    text-align: left;
+}
+
+.section-title.text-white {
+    .section-heading {
+        color: $text--white !important;
+    }
+    .section-image {
+        img {
+            filter: invert(9%) sepia(2%) saturate(5540%) hue-rotate(216deg) brightness(200%) contrast(100%);
+        }
+    }
+}
+
+.section-heading {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-transform: capitalize;
+    color: $text--base;
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin: -5px 0;
+    @include responsive(lg) {
+        font-size: 32px;
+    }
+    @include responsive(allPhone) {
+        font-size: 28px;
+    }
+    @include responsive(xs) {
+        font-size: 25px;
+    }
+    @include responsive(vxxs) {
+        font-size: 23px;
+    }
+}
+
+.section-image {
+    margin-top: 25px;
+    img {
+        margin: 0 auto;
+    }
+}
+
+.section-para {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: "Lato";
+    margin-top: 25px;
+}

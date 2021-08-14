@@ -1,0 +1,214 @@
+/* Main Menu */
+
+.navigation-area {
+    background: none;
+    z-index: 555;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px 0px;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+    &.shrinkheader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 998;
+        background: $bg--body;
+        padding: 10px 0px;
+        @include bottom-black-shadow;
+        visibility: visible;
+        opacity: 1;
+        top: 0;
+        -webkit-transition: all .4s;
+        -o-transition: all .4s;
+        transition: all .4s;
+        @include responsive(allPhone) {
+            padding: 10px 10px 0 !important;
+        }
+        .main-menu {
+            ul.list-menu {
+                li {
+                    a {
+                        padding: 25px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.logo {
+    img {
+        max-height: 80px;
+        max-width: 120px;
+        @include responsive(allPhone) {
+            max-height: 50px;
+            max-width: 130px;
+        }
+        @include responsive(xs) {
+            max-height: 45px;
+            max-width: 130px;
+        }
+    }
+}
+
+.main-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    ul.list-menu {
+        li {
+            display: inline-block;
+            margin-left: 48px;
+            position: relative;
+            @include responsive(lg) {
+                margin-left: 25px;
+            }
+            &:hover>a.has-child {
+                &::after {
+                    content: "\f068";
+                }
+            }
+            &:hover>a {
+                color: $text--white;
+                background: none;
+            }
+            &:hover {
+                >.submenu {
+                    visibility: visible;
+                    opacity: 1;
+                    top: 100%;
+                }
+            }
+            a.has-child {
+                &::after {
+                    content: "\f067";
+                    @include line-font;
+                    margin-right: 0;
+                    margin-left: 5px;
+                }
+            }
+            a {
+                color: $text--white;
+                display: inline-block;
+                font-size: 21px;
+                color: #ffffff;
+                font-weight: 700;
+                font-family: "Gentium Book Basic";
+                padding: 50px 0;
+                -webkit-transition: all .3s;
+                -o-transition: all .3s;
+                transition: all .3s;
+                @include responsive(xl) {
+                    font-size: 19px;
+                }
+                @include responsive(lg) {
+                    font-size: 17px;
+                }
+                &.active {
+                    color: $text--white;
+                    &::before {
+                        visibility: visible;
+                        opacity: 1;
+                        width: 100%;
+                    }
+                }
+                &:hover {
+                    &::before {
+                        visibility: visible;
+                        opacity: 1;
+                        width: 100%;
+                    }
+                }
+                &::before {
+                    position: absolute;
+                    content: "";
+                    z-index: -1;
+                    background: $bg--white;
+                    height: 3px;
+                    width: 0;
+                    top: 0%;
+                    left: 50%;
+                    -webkit-transform: translateX(-50%);
+                    -ms-transform: translateX(-50%);
+                    transform: translateX(-50%);
+                    visibility: hidden;
+                    opacity: 0;
+                    -webkit-transition: all .2s;
+                    -o-transition: all .2s;
+                    transition: all .2s;
+                }
+            }
+            .submenu {
+                position: absolute;
+                width: 200px;
+                top: 120%;
+                left: 0;
+                background: $bg--body;
+                z-index: 2;
+                visibility: hidden;
+                opacity: 0;
+                padding: 10px 0;
+                border-bottom: 2px solid $bg--base;
+                @include base-shadow;
+                -webkit-transition: all .3s;
+                -o-transition: all .3s;
+                transition: all .3s;
+                li {
+                    margin: 0;
+                    display: block;
+                    &:hover>a {
+                        padding-left: 25px;
+                        background: none;
+                        color: $text--base;
+                        &::before {
+                            display: none;
+                        }
+                    }
+                    a {
+                        display: block;
+                        padding: 10px 20px;
+                        border-bottom: 1px dashed rgba($bg--base, .3);
+                    }
+                    &:last-child {
+                        a {
+                            border-bottom: 0 !important;
+                        }
+                    }
+                    .submenu {
+                        top: 0%;
+                        left: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .social-menu {
+        display: flex;
+        align-items: center;
+        @include responsive(allPhone) {
+            display: none;
+        }
+        li {
+            margin-left: 20px;
+            a {
+                font-size: 16px;
+                color: $text--white;
+                transition: all .3s;
+                &:hover {
+                    color: $text--base;
+                }
+            }
+        }
+    }
+}
